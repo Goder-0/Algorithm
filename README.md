@@ -1,4 +1,4 @@
-# BeakJoon
+# BaekJoon
 백준 문제 풀이
 
 단계별 문제 풀이중 입니다.
