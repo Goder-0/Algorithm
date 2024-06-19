@@ -10,19 +10,14 @@ int main()
     int N,res=0;
     cin>>N;
     string s;
-    vector<string> sv;
     for(int i=0;i<N;i++){
         cin>>s;
-        sv.emplace_back(s);
-    }
-    for(int i=0;i<N;i++){
-        stack<char> s;
-        for(char c : sv[i]){
-            if(s.empty()) s.push(c);
-            else if(s.top()==c) s.pop();
-            else s.push(c);
+        stack<char> st;
+        for(char c : s){
+            if(!st.empty()&&st.top()==c) st.pop();
+            else st.push(c);
         }
-        if(s.empty()) res++;
+        if(st.empty()) res++;
     }
 
     cout<<res;
