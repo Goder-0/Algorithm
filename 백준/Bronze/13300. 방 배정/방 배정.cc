@@ -16,7 +16,7 @@ int main()
         counts[Y-1+S*6]++;
     }
     for(int i=0;i<12;i++){
-        ans+=(counts[i]+1)/2;
+        ans+=(counts[i]+K-1)/K;
     }
     cout<<ans;
     return 0;
