@@ -24,19 +24,16 @@ bool is_conn(pair<int, int> point) {
 }
 
 int lightOn(){
-    int can_vis[101][101];
     int c=0;
     queue<pair<int,int>>q;
     room[1][1]=true;
     vis[1][1]=true;
-    can_vis[1][1]=true;
     q.emplace(1,1);
     while(!q.empty()){
         auto cur=q.front();q.pop();
         for(auto point:lights[cur.X][cur.Y]){
             if(vis[point.X][point.Y]) continue;
             if(!room[point.X][point.Y]){
-                // if(can_vis[point.X][point.Y]){
                 if(is_conn(point)){
                     vis[point.X][point.Y]=true;
                     q.emplace(point);
@@ -48,7 +45,6 @@ int lightOn(){
             int nx=cur.X+dx[dir];
             int ny=cur.Y+dy[dir];
             if(nx<1||ny<1||nx>N||ny>N) continue;
-            // can_vis[nx][ny]=true;
             if(!room[nx][ny]) continue;
             if(vis[nx][ny]) continue;
             vis[nx][ny]=true;
