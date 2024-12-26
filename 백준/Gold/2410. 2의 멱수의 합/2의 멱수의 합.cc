@@ -5,7 +5,7 @@
 using namespace std;
 
 int n;
-long long dp[1000001];
+int dp[1000001];
 int main()
 {
     io;
